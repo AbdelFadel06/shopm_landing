@@ -2,28 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
   background: #fff;
-  color: #0F172A;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
-@layer utilities {
-  .text-gradient {
-    background: linear-gradient(135deg, #1D4ED8, #3B82F6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 sm:px-8;
   }
-  .text-gradient-light {
-    background: linear-gradient(135deg, #60A5FA, #93C5FD);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white hover:bg-brand-dark;
+  }
+  .btn-secondary {
+    @apply btn border border-line bg-white text-ink hover:bg-soft;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-wider text-brand;
+  }
+  .shot {
+    @apply rounded-lg border border-line bg-white shadow-sm;
+  }
+  /* Pages légales */
+  .legal h2 {
+    @apply mt-10 mb-3 text-lg font-semibold text-ink;
+  }
+  .legal p,
+  .legal li {
+    @apply text-[15px] text-body;
+  }
+  .legal p {
+    @apply mb-3;
+  }
+  .legal ul {
+    @apply mb-3 list-disc space-y-1 pl-5;
+  }
+  .legal a {
+    @apply text-brand underline underline-offset-2;
   }
 }
