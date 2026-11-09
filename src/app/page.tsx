@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Showcase from "@/components/Showcase";
+import { Laptop, Phone } from "@/components/Mockups";
 import { DEMO_URL, EMAIL, WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/site";
 
 const features = [
@@ -38,93 +40,60 @@ const benefits = [
   ["Pensé pour le franc CFA", "Montants et rapports en francs CFA, interface entièrement en français."],
 ];
 
-function Shot({
-  src,
-  alt,
-  mobile,
-  className = "",
-}: {
-  src: string;
-  alt: string;
-  mobile?: string;
-  className?: string;
-}) {
-  // Sur téléphone, la capture d'ordinateur serait illisible : on montre la version mobile.
-  return (
-    <>
-      {mobile && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={mobile}
-          alt={alt}
-          width={390}
-          height={844}
-          loading="lazy"
-          decoding="async"
-          className="shot mx-auto block h-auto w-full max-w-[280px] sm:hidden"
-        />
-      )}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={src}
-        alt={alt}
-        width={1440}
-        height={900}
-        loading="lazy"
-        decoding="async"
-        className={`shot h-auto w-full ${mobile ? "hidden sm:block" : ""} ${className}`}
-      />
-    </>
-  );
-}
-
 export default function Home() {
   return (
     <>
       <Header />
       <main>
         {/* ── Présentation ── */}
-        <section className="container-page pb-20 pt-14 sm:pt-20">
-          <div className="max-w-2xl">
-            <p className="eyebrow">Logiciel de gestion de boutique</p>
-            <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-[2.5rem]">
-              Votre caisse, vos stocks et vos livraisons, enfin au même endroit.
-            </h1>
-            <p className="mt-4 max-w-xl text-base text-body">
-              ShopM aide les commerçants à suivre ce qui se vend, ce qui reste en rayon et ce qui part en
-              livraison, pour une ou plusieurs boutiques.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a href={DEMO_URL} className="btn-primary">
-                Essayer la démo
-              </a>
-              <a href={WHATSAPP_URL} className="btn-secondary">
-                Nous contacter
-              </a>
+        <section className="container-page pb-16 pt-14 sm:pb-20 sm:pt-20">
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.15fr]">
+            <div>
+              <p className="eyebrow">Logiciel de gestion de boutique</p>
+              <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-[2.4rem]">
+                Votre caisse, vos stocks et vos livraisons, enfin au même endroit.
+              </h1>
+              <p className="mt-4 max-w-xl text-base text-body">
+                ShopM aide les commerçants à suivre ce qui se vend, ce qui reste en rayon et ce qui part en
+                livraison, pour une ou plusieurs boutiques.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a href={DEMO_URL} className="btn-primary">
+                  Essayer la démo
+                </a>
+                <a href={WHATSAPP_URL} className="btn-secondary">
+                  Nous contacter
+                </a>
+              </div>
+              <p className="mt-3 text-xs text-muted">Démo gratuite, sans inscription.</p>
             </div>
-            <p className="mt-3 text-xs text-muted">Démo gratuite, sans inscription.</p>
-          </div>
 
-          <div className="relative mt-12">
-            <Shot
-              src="/shots/desktop-manager-dashboard.webp"
-              mobile="/shots/mobile-manager-dashboard.webp"
-              alt="Tableau de bord du manager dans ShopM"
-              className="lg:mr-28"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/shots/mobile-manager-dashboard.webp"
-              alt="ShopM sur téléphone"
-              width={390}
-              height={844}
-              className="shot absolute -bottom-8 right-0 hidden h-auto w-[200px] lg:block"
-            />
+            <div className="relative pb-6 pr-[12%] sm:pr-[14%]">
+              <Laptop src="/shots/pc-dashboard.webp" alt="Tableau de bord de ShopM sur ordinateur" eager />
+              <div className="absolute bottom-0 right-0 w-[24%] min-w-[92px] max-w-[170px]">
+                <Phone src="/shots/mobile-caisse.webp" alt="Caisse ShopM sur téléphone" eager />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Aperçu (fond bleu) ── */}
+        <section id="apercu" className="bg-brand py-16 text-white sm:py-20">
+          <div className="container-page">
+            <div className="mx-auto max-w-xl text-center">
+              <p className="text-xs font-semibold uppercase tracking-wider text-blue-200">Aperçu</p>
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+                La même application, sur ordinateur et sur téléphone
+              </h2>
+            </div>
+            <div className="mt-8">
+              <Showcase />
+            </div>
           </div>
         </section>
 
         {/* ── Fonctionnalités ── */}
-        <section id="fonctionnalites" className="border-t border-line bg-soft py-16 sm:py-20">
+        <section id="fonctionnalites" className="py-16 sm:py-20">
           <div className="container-page">
             <div className="max-w-xl">
               <p className="eyebrow">Fonctionnalités</p>
@@ -140,22 +109,11 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
-            <div className="mt-14 grid items-start gap-6 md:grid-cols-2">
-              <figure>
-                <Shot src="/shots/desktop-caisse.webp" alt="Écran de caisse avec les photos des produits" />
-                <figcaption className="mt-2 text-xs text-muted">La caisse, avec la photo de chaque produit.</figcaption>
-              </figure>
-              <figure>
-                <Shot src="/shots/desktop-manager-stocks.webp" mobile="/shots/mobile-manager-stocks.webp" alt="Suivi des stocks et des alertes" />
-                <figcaption className="mt-2 text-xs text-muted">Les stocks et les produits à réapprovisionner.</figcaption>
-              </figure>
-            </div>
           </div>
         </section>
 
         {/* ── Avantages ── */}
-        <section id="avantages" className="py-16 sm:py-20">
+        <section id="avantages" className="border-y border-line bg-soft py-16 sm:py-20">
           <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.4fr]">
             <div>
               <p className="eyebrow">Avantages</p>
@@ -179,8 +137,8 @@ export default function Home() {
         </section>
 
         {/* ── Démo ── */}
-        <section className="border-t border-line bg-soft py-16 sm:py-20">
-          <div className="container-page grid items-center gap-10 md:grid-cols-[1.2fr_1fr]">
+        <section className="py-16 sm:py-20">
+          <div className="container-page grid items-center gap-12 md:grid-cols-[1.2fr_1fr]">
             <div>
               <p className="eyebrow">Démo</p>
               <h2 className="mt-2 text-2xl font-semibold tracking-tight text-ink">Essayez ShopM avant d’en parler</h2>
@@ -193,23 +151,25 @@ export default function Home() {
                 Ouvrir la démo
               </a>
             </div>
-            <Shot src="/shots/desktop-login.webp" mobile="/shots/mobile-login.webp" alt="Page de connexion de la démo ShopM" />
+            <div className="mx-auto w-[62%] max-w-[250px]">
+              <Phone src="/shots/mobile-login.webp" alt="Connexion à la démo ShopM en un clic" />
+            </div>
           </div>
         </section>
 
-        {/* ── Contact ── */}
-        <section id="contact" className="py-16 sm:py-20">
+        {/* ── Contact (fond bleu) ── */}
+        <section id="contact" className="bg-brand py-16 text-white sm:py-20">
           <div className="container-page max-w-2xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight text-ink">Parlons de votre boutique</h2>
-            <p className="mt-3 text-sm text-body">
+            <h2 className="text-2xl font-semibold tracking-tight">Parlons de votre boutique</h2>
+            <p className="mt-3 text-sm text-blue-100">
               Une question, une démonstration guidée ou une mise en place pour votre commerce ? Écrivez-nous
               sur WhatsApp, c’est le moyen le plus rapide de nous joindre.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
-              <a href={WHATSAPP_URL} className="btn bg-whatsapp text-white hover:opacity-90">
+              <a href={WHATSAPP_URL} className="btn bg-white text-brand hover:bg-brand-pale">
                 WhatsApp · {WHATSAPP_DISPLAY}
               </a>
-              <a href={`mailto:${EMAIL}`} className="btn-secondary">
+              <a href={`mailto:${EMAIL}`} className="btn border border-blue-300 text-white hover:bg-brand-dark">
                 {EMAIL}
               </a>
             </div>

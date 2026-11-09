@@ -18,6 +18,9 @@ export default function Header() {
       <div className="container-page flex h-14 items-center justify-between">
         <Logo />
         <nav className="flex items-center gap-6 text-sm">
+          <Link href="/#apercu" className="hidden text-body hover:text-ink sm:inline">
+            Aperçu
+          </Link>
           <Link href="/#fonctionnalites" className="hidden text-body hover:text-ink sm:inline">
             Fonctionnalités
           </Link>
