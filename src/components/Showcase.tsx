@@ -4,78 +4,107 @@ import { useState } from "react";
 import { Laptop, Phone } from "./Mockups";
 
 const screens = [
-  { key: "dashboard", label: "Tableau de bord", text: "Chiffre d’affaires, ruptures et meilleurs produits dès l’ouverture." },
-  { key: "caisse", label: "Caisse", text: "Le caissier trouve le produit par son nom ou sa photo et encaisse." },
-  { key: "stocks", label: "Stocks", text: "Quantités par boutique et alertes de réapprovisionnement." },
-  { key: "ventes", label: "Ventes", text: "Chaque vente avec son caissier, son paiement et son statut." },
-  { key: "rapport", label: "Rapport", text: "Le rapport du jour : encaissements, articles vendus, livraisons en attente." },
+  {
+    key: "dashboard",
+    label: "Tableau de bord",
+    title: "Votre journée en un coup d’œil",
+    text: "Chiffre d’affaires de la semaine, produits en rupture et meilleures ventes, dès l’ouverture de l’application.",
+  },
+  {
+    key: "caisse",
+    label: "Caisse",
+    title: "Encaissez vite, au bon prix",
+    text: "Le caissier retrouve le produit par son nom ou sa photo, le panier se calcule tout seul et le stock suit.",
+  },
+  {
+    key: "stocks",
+    label: "Stocks",
+    title: "Sachez ce qu’il reste en rayon",
+    text: "Quantités par boutique et par emplacement, avec les produits à réapprovisionner mis en avant.",
+  },
+  {
+    key: "ventes",
+    label: "Ventes",
+    title: "Chaque vente est retrouvable",
+    text: "Référence, caissier, moyen de paiement et statut : l’historique complet, filtrable par jour.",
+  },
+  {
+    key: "rapport",
+    label: "Rapport",
+    title: "Le rapport du jour, prêt à imprimer",
+    text: "Encaissements en espèces et Mobile Money, articles vendus et livraisons en attente de paiement.",
+  },
 ] as const;
 
+type ScreenKey = (typeof screens)[number]["key"];
 type Device = "pc" | "mobile";
 
-function Tabs<T extends string>({
-  label,
-  items,
-  value,
-  onChange,
-}: {
-  label: string;
-  items: readonly { key: T; label: string }[];
-  value: T;
-  onChange: (v: T) => void;
-}) {
-  return (
-    <div role="tablist" aria-label={label} className="inline-flex flex-wrap justify-center gap-1 rounded-lg bg-brand-dark p-1">
-      {items.map((it) => {
-        const active = it.key === value;
-        return (
-          <button
-            key={it.key}
-            role="tab"
-            type="button"
-            aria-selected={active}
-            onClick={() => onChange(it.key)}
-            className={`rounded-md px-3 py-1.5 text-[13px] font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${
-              active ? "bg-white text-brand" : "text-blue-100 hover:text-white"
-            }`}
-          >
-            {it.label}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
 export default function Showcase() {
+  const [screen, setScreen] = useState<ScreenKey>("dashboard");
   const [device, setDevice] = useState<Device>("pc");
-  const [screen, setScreen] = useState<(typeof screens)[number]["key"]>("dashboard");
   const current = screens.find((s) => s.key === screen)!;
   const alt = `${current.label} de ShopM sur ${device === "pc" ? "ordinateur" : "téléphone"}`;
 
   return (
-    <div className="flex flex-col items-center">
-      <Tabs
-        label="Appareil"
-        items={[
-          { key: "pc" as Device, label: "Ordinateur" },
-          { key: "mobile" as Device, label: "Téléphone" },
-        ]}
-        value={device}
-        onChange={setDevice}
-      />
-      <div className="mt-3">
-        <Tabs label="Écran" items={screens} value={screen} onChange={setScreen} />
+    <div>
+      {/* Barre d'onglets des écrans */}
+      <div className="rounded-xl border border-line bg-soft p-1.5">
+        <div role="tablist" aria-label="Écran" className="flex gap-1 overflow-x-auto">
+          {screens.map((s) => {
+            const active = s.key === screen;
+            return (
+              <button
+                key={s.key}
+                role="tab"
+                type="button"
+                aria-selected={active}
+                onClick={() => setScreen(s.key)}
+                className={`flex-1 whitespace-nowrap rounded-lg px-4 py-2 text-[13px] font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+                  active ? "bg-white text-brand shadow-sm" : "text-body hover:text-ink"
+                }`}
+              >
+                {s.label}
+              </button>
+            );
+          })}
+        </div>
       </div>
-      <p className="mt-5 min-h-[2.5rem] max-w-md text-center text-sm text-blue-100">{current.text}</p>
 
-      <div className="mt-6 w-full" role="tabpanel">
+      <div className="mx-auto mt-10 max-w-2xl text-center">
+        <h3 className="text-2xl font-semibold tracking-tight text-brand sm:text-[1.75rem]">{current.title}</h3>
+        <p className="mt-3 text-sm text-body">{current.text}</p>
+
+        {/* Choix de l'appareil */}
+        <div role="tablist" aria-label="Appareil" className="mt-6 inline-flex rounded-full border border-line p-1">
+          {(
+            [
+              ["pc", "Version ordinateur"],
+              ["mobile", "Version téléphone"],
+            ] as [Device, string][]
+          ).map(([key, label]) => (
+            <button
+              key={key}
+              role="tab"
+              type="button"
+              aria-selected={device === key}
+              onClick={() => setDevice(key)}
+              className={`rounded-full px-4 py-1.5 text-[13px] font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+                device === key ? "bg-brand text-white" : "text-body hover:text-ink"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-10" role="tabpanel" aria-label={alt}>
         {device === "pc" ? (
-          <div className="mx-auto w-[88%] max-w-[880px]">
+          <div className="mx-auto w-[90%] max-w-[860px]">
             <Laptop key={screen} src={`/shots/pc-${screen}.webp`} alt={alt} />
           </div>
         ) : (
-          <div className="mx-auto w-[64%] max-w-[270px]">
+          <div className="mx-auto w-[66%] max-w-[270px]">
             <Phone key={screen} src={`/shots/mobile-${screen}.webp`} alt={alt} />
           </div>
         )}
