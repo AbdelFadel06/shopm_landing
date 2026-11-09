@@ -100,7 +100,7 @@ export default function Showcase() {
 
       <div className="mt-10" role="tabpanel" aria-label={alt}>
         {device === "pc" ? (
-          <div className="mx-auto w-[90%] max-w-[860px]">
+          <div className="mx-auto w-[90%] max-w-[960px]">
             <Laptop key={screen} src={`/shots/pc-${screen}.webp`} alt={alt} />
           </div>
         ) : (

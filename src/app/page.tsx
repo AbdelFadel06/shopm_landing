@@ -69,7 +69,7 @@ export default function Home() {
           </div>
           <p className="mt-3 text-xs text-muted">Démo gratuite, sans inscription.</p>
 
-          <div className="relative mx-auto mt-14 max-w-[920px] pb-8 pr-[10%] sm:mt-16">
+          <div className="relative mx-auto mt-14 max-w-[1000px] pb-8 pr-[10%] sm:mt-16">
             <Laptop src="/shots/pc-caisse.webp" alt="Caisse de ShopM sur ordinateur" eager />
             <div className="absolute bottom-0 right-0 w-[20%] min-w-[84px] max-w-[180px]">
               <Phone src="/shots/mobile-dashboard.webp" alt="Tableau de bord ShopM sur téléphone" eager />
