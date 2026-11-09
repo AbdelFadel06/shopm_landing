@@ -5,3 +5,6 @@ export const WHATSAPP_URL =
   "https://wa.me/2290156927899?text=" +
   encodeURIComponent("Bonjour, je souhaite en savoir plus sur ShopM.");
 export const EMAIL = "noreply.shopm@gmail.com";
+export const WHATSAPP_CUSTOM_URL =
+  "https://wa.me/2290156927899?text=" +
+  encodeURIComponent("Bonjour, j'aimerais discuter d'un module ou d'un logiciel sur mesure pour mon activité.");

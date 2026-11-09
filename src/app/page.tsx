@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Showcase from "@/components/Showcase";
 import { Phone, Screen } from "@/components/Mockups";
 import { ArrowRight, Bell, Check, Layers, Shield } from "@/components/Icons";
-import { DEMO_URL, EMAIL, WHATSAPP_URL } from "@/lib/site";
+import { DEMO_URL, EMAIL, WHATSAPP_CUSTOM_URL, WHATSAPP_URL } from "@/lib/site";
 
 // Les trois raisons principales, dans l'ordre d'importance pour un commerçant.
 const pillars = [
@@ -137,6 +137,28 @@ export default function Home() {
                   </ul>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Sur mesure ── */}
+        <section id="sur-mesure" className="pb-12 sm:pb-16">
+          <div className="container-page">
+            <div className="flex flex-col gap-6 rounded-2xl border border-line p-6 sm:p-10 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-2xl">
+                <p className="eyebrow">Sur mesure</p>
+                <h2 className="mt-2 text-xl font-bold tracking-tight text-ink sm:text-2xl">
+                  Un besoin particulier ? <span className="whitespace-nowrap">Parlons-en.</span>
+                </h2>
+                <p className="mt-3 text-sm text-body">
+                  Votre activité a ses propres règles : nous pouvons ajouter à ShopM un module pensé pour
+                  vous, ou développer un logiciel qui vous sera propre. Expliquez-nous votre besoin, on en
+                  discute ensemble.
+                </p>
+              </div>
+              <a href={WHATSAPP_CUSTOM_URL} className="btn-primary shrink-0 self-start md:self-center">
+                En discuter sur WhatsApp <ArrowRight />
+              </a>
             </div>
           </div>
         </section>
