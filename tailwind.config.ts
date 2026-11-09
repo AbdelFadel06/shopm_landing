@@ -19,7 +19,7 @@ const config: Config = {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       maxWidth: {
-        page: "76rem",
+        page: "80rem",
       },
     },
   },

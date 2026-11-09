@@ -1,32 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import { Laptop, Phone } from "./Mockups";
+import { Phone, Screen } from "./Mockups";
 
 const screens = [
   {
-    key: "dashboard",
-    label: "Tableau de bord",
-    title: "Votre journée en un coup d’œil",
-    text: "Chiffre d’affaires de la semaine, produits en rupture et meilleures ventes, dès l’ouverture de l’application.",
+    key: "stocks",
+    label: "Stocks",
+    title: "Votre stock, en boutique comme en magasin",
+    text: "Les quantités de chaque produit, au comptoir et en réserve, avec les ruptures et les stocks bas mis en avant pour commander à temps.",
   },
   {
     key: "caisse",
     label: "Caisse",
-    title: "Encaissez vite, au bon prix",
-    text: "Le caissier retrouve le produit par son nom ou sa photo, le panier se calcule tout seul et le stock suit.",
-  },
-  {
-    key: "stocks",
-    label: "Stocks",
-    title: "Sachez ce qu’il reste en rayon",
-    text: "Quantités par boutique et par emplacement, avec les produits à réapprovisionner mis en avant.",
+    title: "Chaque vente passe par la caisse",
+    text: "Le caissier retrouve le produit par son nom ou sa photo, encaisse, et le stock diminue tout seul. Plus de vente qui ne laisse aucune trace.",
   },
   {
     key: "ventes",
     label: "Ventes",
-    title: "Chaque vente est retrouvable",
-    text: "Référence, caissier, moyen de paiement et statut : l’historique complet, filtrable par jour.",
+    title: "Toutes vos ventes et livraisons enregistrées",
+    text: "Référence, caissier, moyen de paiement et statut de chaque vente, sur place ou en livraison, filtrables par jour.",
   },
   {
     key: "rapport",
@@ -34,13 +28,19 @@ const screens = [
     title: "Le rapport du jour, prêt à imprimer",
     text: "Encaissements en espèces et Mobile Money, articles vendus et livraisons en attente de paiement.",
   },
+  {
+    key: "dashboard",
+    label: "Tableau de bord",
+    title: "L’essentiel dès l’ouverture",
+    text: "Ruptures, produits sous le minimum, chiffre d’affaires de la semaine et meilleures ventes.",
+  },
 ] as const;
 
 type ScreenKey = (typeof screens)[number]["key"];
 type Device = "pc" | "mobile";
 
 export default function Showcase() {
-  const [screen, setScreen] = useState<ScreenKey>("dashboard");
+  const [screen, setScreen] = useState<ScreenKey>("stocks");
   const [device, setDevice] = useState<Device>("pc");
   const current = screens.find((s) => s.key === screen)!;
   const alt = `${current.label} de ShopM sur ${device === "pc" ? "ordinateur" : "téléphone"}`;
@@ -100,8 +100,8 @@ export default function Showcase() {
 
       <div className="mt-10" role="tabpanel" aria-label={alt}>
         {device === "pc" ? (
-          <div className="mx-auto w-[90%] max-w-[960px]">
-            <Laptop key={screen} src={`/shots/pc-${screen}.webp`} alt={alt} />
+          <div className="mx-auto w-[90%] max-w-[1000px]">
+            <Screen key={screen} src={`/shots/pc-${screen}.webp`} alt={alt} />
           </div>
         ) : (
           <div className="mx-auto w-[66%] max-w-[270px]">

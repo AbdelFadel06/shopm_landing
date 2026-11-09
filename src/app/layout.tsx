@@ -5,14 +5,14 @@ import "./globals.css";
 const sans = DM_Sans({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "ShopM — Gestion de boutique : caisse, stocks, livraisons",
+  title: "ShopM — Suivi de stock et caisse pour boutiques",
   description:
-    "ShopM réunit la caisse, les stocks, les transferts, les livraisons et les rapports de vos boutiques dans une seule application, sur ordinateur comme sur téléphone.",
+    "Suivez votre stock en boutique et en magasin, recevez les alertes de rupture et de stock bas, enregistrez toutes vos ventes et livraisons. ShopM, sur ordinateur et téléphone.",
   icons: { icon: "/favicon.png", apple: "/apple-touch-icon.png" },
   keywords: "gestion boutique, logiciel caisse, gestion de stock, ventes, livraisons, Bénin",
   openGraph: {
-    title: "ShopM — Gestion de boutique",
-    description: "Caisse, stocks, livraisons et rapports dans une seule application.",
+    title: "ShopM — Suivi de stock et caisse",
+    description: "Sachez exactement ce qui entre et sort de votre stock.",
     type: "website",
     locale: "fr_FR",
   },

@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <Logo />
           <p className="mt-3 max-w-xs text-body">
-            Logiciel de gestion de boutique : caisse, stocks, livraisons et rapports.
+            Suivi de stock et caisse pour boutiques : en boutique, en magasin et sur votre téléphone.
           </p>
         </div>
         <div>
