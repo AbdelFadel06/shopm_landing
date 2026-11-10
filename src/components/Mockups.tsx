@@ -14,6 +14,7 @@ export function Screen({ src, alt, eager }: ShotProps) {
           width={1600}
           height={1000}
           loading={eager ? "eager" : "lazy"}
+          fetchPriority={eager ? "high" : undefined}
           decoding="async"
           className="h-full w-full object-cover object-top"
         />

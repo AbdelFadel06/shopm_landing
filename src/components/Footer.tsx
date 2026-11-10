@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <Logo />
           <p className="mt-3 max-w-xs text-body">
-            Suivi de stock et caisse pour boutiques : en boutique, en magasin et sur votre téléphone.
+            Logiciel de gestion de stock et de caisse pour boutiques à Cotonou, Abomey-Calavi et partout au Bénin.
           </p>
         </div>
         <div>
@@ -17,6 +17,7 @@ export default function Footer() {
           <ul className="mt-3 space-y-2 text-body">
             <li><Link href="/#apercu" className="hover:text-brand">Aperçu</Link></li>
             <li><Link href="/#fonctionnalites" className="hover:text-brand">Fonctionnalités</Link></li>
+            <li><Link href="/#faq" className="hover:text-brand">Questions fréquentes</Link></li>
             <li><a href={DEMO_URL} className="hover:text-brand">Démo</a></li>
           </ul>
         </div>

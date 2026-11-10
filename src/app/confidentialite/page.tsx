@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
 import { EMAIL, WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Politique de confidentialité — ShopM" };
+export const metadata: Metadata = {
+  title: "Politique de confidentialité",
+  description: "Comment ShopM traite et protège les données de votre boutique et de vos employés.",
+  alternates: { canonical: "/confidentialite/" },
+};
 
 export default function Confidentialite() {
   return (

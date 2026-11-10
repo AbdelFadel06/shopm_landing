@@ -1,4 +1,6 @@
 // Coordonnées et liens utilisés partout sur le site.
+export const SITE_URL = "https://shopm-site.abdelsaliou.dev";
+export const WHATSAPP_E164 = "+2290156927899";
 export const DEMO_URL = "https://shopm-demo.abdelsaliou.dev/login";
 export const WHATSAPP_DISPLAY = "+229 01 56 92 78 99";
 export const WHATSAPP_URL =

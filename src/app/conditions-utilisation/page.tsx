@@ -3,7 +3,11 @@ import Link from "next/link";
 import LegalPage from "@/components/LegalPage";
 import { EMAIL, WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Conditions d’utilisation — ShopM" };
+export const metadata: Metadata = {
+  title: "Conditions d’utilisation",
+  description: "Conditions d’utilisation de ShopM, logiciel de gestion de stock et de caisse pour boutiques.",
+  alternates: { canonical: "/conditions-utilisation/" },
+};
 
 export default function Conditions() {
   return (

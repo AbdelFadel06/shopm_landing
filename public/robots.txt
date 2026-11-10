@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shopm-site.abdelsaliou.dev/sitemap.xml

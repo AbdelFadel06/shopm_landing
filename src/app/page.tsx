@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Showcase from "@/components/Showcase";
+import Faq from "@/components/Faq";
+import JsonLd from "@/components/JsonLd";
 import { Phone, Screen } from "@/components/Mockups";
 import { ArrowRight, Bell, Check, Layers, Shield } from "@/components/Icons";
 import { DEMO_URL, EMAIL, WHATSAPP_CUSTOM_URL, WHATSAPP_URL } from "@/lib/site";
@@ -48,14 +50,17 @@ const cards = [
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <Header />
       <main>
         {/* ── Présentation ── */}
         <section className="container-page pt-16 text-center sm:pt-24">
-          <p className="eyebrow">Gestion de stock et de caisse pour boutiques</p>
-          <h1 className="mx-auto mt-4 max-w-3xl text-[1.85rem] font-bold leading-tight tracking-tight text-ink sm:text-[2.5rem]">
-            Sachez exactement ce qui <span className="text-brand">entre</span> et ce qui{" "}
-            <span className="text-brand">sort</span> de votre stock
+          <h1>
+            <span className="eyebrow block">Logiciel de gestion de stock et de caisse au Bénin</span>
+            <span className="mx-auto mt-4 block max-w-3xl text-[1.85rem] font-bold leading-tight tracking-tight text-ink sm:text-[2.5rem]">
+              Sachez exactement ce qui <span className="text-brand">entre</span> et ce qui{" "}
+              <span className="text-brand">sort</span> de votre stock
+            </span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-[15px] text-body">
             Produits qui disparaissent, ventes non enregistrées, ruptures découvertes trop tard : ShopM suit
@@ -75,7 +80,7 @@ export default function Home() {
           <div className="mx-auto mt-14 max-w-[1040px] sm:mt-16">
             <Screen
               src="/shots/pc-dashboard.webp"
-              alt="Tableau de bord ShopM : ruptures, produits critiques et stocks bas"
+              alt="Logiciel de gestion de stock ShopM : tableau de bord avec ruptures, produits critiques et stocks bas"
               eager
             />
           </div>
@@ -140,6 +145,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Faq />
 
         {/* ── Sur mesure ── */}
         <section id="sur-mesure" className="pb-12 sm:pb-16">
