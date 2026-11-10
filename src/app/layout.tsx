@@ -47,6 +47,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: ["/og.jpg"],
   },
+  verification: { google: "UF_KetRIQeWvITJV_X-_Vh5y0XKdu-atUiXPSgmYnhU" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
   other: {
     "geo.region": "BJ-LI",
