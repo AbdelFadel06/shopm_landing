@@ -180,8 +180,8 @@ export default function Home() {
                 </h2>
                 <p className="mt-4 text-[15px] text-blue-100">
                   Essayez la démo : une boutique fictive remise à zéro chaque nuit, où vous vous connectez en
-                  un clic comme manager, caissier ou magasinier. Pour une présentation ou une mise en place,
-                  écrivez-nous sur WhatsApp.
+                  un clic comme manager, caissier ou magasinier. Pour une présentation, une mise en place ou un
+                  logiciel personnalisé selon vos besoins, écrivez-nous sur WhatsApp : on en discute.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
                   <a href={DEMO_URL} className="btn bg-white text-brand hover:bg-brand-pale">

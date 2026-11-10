@@ -25,6 +25,15 @@ const graph = {
         areaServed: ["BJ", "TG", "CI", "SN", "BF", "NE", "ML", "CM", "GA"],
         availableLanguage: "French",
       },
+      makesOffer: {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Logiciel personnalisé sur mesure",
+          description: "Module spécifique pour ShopM ou logiciel de gestion développé selon les besoins de l’entreprise.",
+          areaServed: ["Bénin", "Afrique francophone"],
+        },
+      },
     },
     {
       "@type": "WebSite",

@@ -7,7 +7,7 @@ const sans = DM_Sans({ subsets: ["latin"], variable: "--font-sans", display: "sw
 
 const TITLE = "ShopM — Logiciel de gestion de stock, caisse et inventaire au Bénin";
 const DESCRIPTION =
-  "Logiciel de gestion commerciale pour boutiques à Cotonou, Abomey-Calavi et partout au Bénin : suivi de stock en boutique et en magasin, alertes de rupture, caisse, inventaire et rapports. Démo gratuite.";
+  "Logiciel de gestion commerciale pour boutiques à Cotonou, Abomey-Calavi, au Bénin et en Afrique francophone : suivi de stock en boutique et en magasin, alertes de rupture, caisse, inventaire et rapports. Démo gratuite.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -26,6 +26,8 @@ export const metadata: Metadata = {
     "logiciel gestion Abomey-Calavi",
     "logiciel de gestion Bénin",
     "Afrique francophone",
+    "logiciel sur mesure",
+    "logiciel personnalisé",
     "FCFA",
   ],
   alternates: { canonical: "/" },

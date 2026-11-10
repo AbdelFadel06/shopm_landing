@@ -21,11 +21,15 @@ export const faq: { q: string; a: string }[] = [
     a: "Oui. ShopM s’utilise dans le navigateur d’un ordinateur, d’une tablette ou d’un téléphone, avec une connexion internet, et s’installe comme une application sur Android et iPhone sans passer par un store.",
   },
   {
-    q: "ShopM est-il disponible à Cotonou et Abomey-Calavi ?",
-    a: "Oui. ShopM est utilisé par des commerces au Bénin et convient à toute boutique d’Afrique francophone : interface en français, montants en francs CFA, paiements en espèces et Mobile Money. Nous accompagnons la mise en place à Cotonou, Abomey-Calavi, Porto-Novo et partout au Bénin.",
+    q: "ShopM est-il disponible à Cotonou, au Bénin et en Afrique francophone ?",
+    a: "Oui. ShopM est utilisé par des commerces au Bénin et en Afrique francophone : interface en français, montants en francs CFA, paiements en espèces et Mobile Money. Nous accompagnons la mise en place à Cotonou, Abomey-Calavi, Porto-Novo, partout au Bénin et en Afrique francophone.",
   },
   {
     q: "Combien coûte ShopM ?",
     a: "Le tarif dépend de votre commerce. Écrivez-nous sur WhatsApp pour en parler ; la démo, elle, est gratuite et sans inscription.",
+  },
+  {
+    q: "Pouvez-vous créer un logiciel personnalisé pour mon entreprise ?",
+    a: "Oui. Si votre activité a des besoins particuliers, nous pouvons ajouter à ShopM un module pensé pour vous ou développer un logiciel sur mesure qui vous sera propre. Contactez-nous sur WhatsApp : on en discute ensemble.",
   },
 ];

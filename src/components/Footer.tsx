@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <Logo />
           <p className="mt-3 max-w-xs text-body">
-            Logiciel de gestion de stock et de caisse pour boutiques à Cotonou, Abomey-Calavi et partout au Bénin.
+            Logiciel de gestion de stock et de caisse pour boutiques au Bénin et en Afrique francophone. Logiciel sur mesure sur demande.
           </p>
         </div>
         <div>

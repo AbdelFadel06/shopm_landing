@@ -12,7 +12,7 @@ export default function Faq() {
           </h2>
           <p className="mt-3 text-sm text-body">
             Logiciel de gestion de stock et de caisse pour les boutiques de Cotonou, Abomey-Calavi, Porto-Novo,
-            Parakou et de toute l’Afrique francophone.
+            Parakou et de toute l’Afrique francophone. Besoin d’un logiciel propre à votre activité ? Parlons-en.
           </p>
         </div>
         <div className="divide-y divide-line border-y border-line">
